@@ -49,7 +49,7 @@ class E_EntryController extends Controller
         // all_products entry
 
         DB::table('all_products')->insert(
-                    ['type' => 1, 'type_id' => $ephone->id]
+                    ['type' => 4, 'type_id' => $ephone->id]
                 );
 
         // more images

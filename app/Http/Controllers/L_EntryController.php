@@ -54,7 +54,7 @@ class L_EntryController extends Controller
         // all_products entry
 
         DB::table('all_products')->insert(
-                    ['type' => 1, 'type_id' => $laptop->id]
+                    ['type' => 2, 'type_id' => $laptop->id]
                 );
 
         // more images

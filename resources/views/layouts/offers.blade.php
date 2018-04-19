@@ -15,7 +15,7 @@
 										<div class="snipcart-item block">
 											<div class="snipcart-thumb">
 												<a href="products.html"><img title=" " alt=" " src="images/14.png"></a>
-												<p>Fried-gram</p>
+												<p>Dell Inspiron</p>
 												<div class="stars">
 													<i class="fa fa-star blue-star" aria-hidden="true"></i>
 													<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -23,7 +23,7 @@
 													<i class="fa fa-star blue-star" aria-hidden="true"></i>
 													<i class="fa fa-star gray-star" aria-hidden="true"></i>
 												</div>
-													<h4>$35.99 <span>$55.00</span></h4>
+													<h4>Rs. 45999 <span>Rs. 50000</span></h4>
 											</div>
 											<div class="snipcart-details top_brand_home_details">
 												<form action="#" method="post">
@@ -58,7 +58,7 @@
 										<div class="snipcart-item block">
 											<div class="snipcart-thumb">
 												<a href="products.html"><img title=" " alt=" " src="images/15.png"></a>
-												<p>Navaratan-dal</p>
+												<p>Sony MDR</p>
 												<div class="stars">
 													<i class="fa fa-star blue-star" aria-hidden="true"></i>
 													<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -66,7 +66,7 @@
 													<i class="fa fa-star blue-star" aria-hidden="true"></i>
 													<i class="fa fa-star gray-star" aria-hidden="true"></i>
 												</div>
-													<h4>$30.99 <span>$45.00</span></h4>
+													<h4>Rs. 4599 <span>Rs. 5000</span></h4>
 											</div>
 											<div class="snipcart-details top_brand_home_details">
 												<form action="#" method="post">
@@ -104,7 +104,7 @@
 										<div class="snipcart-item block">
 											<div class="snipcart-thumb">
 												<a href="products.html"><img src="images/16.png" alt=" " class="img-responsive"></a>
-												<p>White-peasmatar</p>
+												<p>Acer Aspire</p>
 												<div class="stars">
 													<i class="fa fa-star blue-star" aria-hidden="true"></i>
 													<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -112,7 +112,7 @@
 													<i class="fa fa-star blue-star" aria-hidden="true"></i>
 													<i class="fa fa-star gray-star" aria-hidden="true"></i>
 												</div>
-													<h4>$80.99 <span>$105.00</span></h4>
+													<h4>Rs. 28999 <span>Rs. 30000</span></h4>
 											</div>
 											<div class="snipcart-details top_brand_home_details">
 												<form action="#" method="post">
@@ -147,7 +147,7 @@
 										<div class="snipcart-item block">
 											<div class="snipcart-thumb">
 												<a href="products.html"><img title=" " alt=" " src="images/17.png"></a>
-												<p>Channa-dal</p>
+												<p>Redmi Note 5 Pro</p>
 												<div class="stars">
 													<i class="fa fa-star blue-star" aria-hidden="true"></i>
 													<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -155,7 +155,7 @@
 													<i class="fa fa-star blue-star" aria-hidden="true"></i>
 													<i class="fa fa-star gray-star" aria-hidden="true"></i>
 												</div>
-													<h4>$35.99 <span>$55.00</span></h4>
+													<h4>Rs. 14999 <span>Rs. 16000</span></h4>
 											</div>
 											<div class="snipcart-details top_brand_home_details">
 												<form action="#" method="post">
