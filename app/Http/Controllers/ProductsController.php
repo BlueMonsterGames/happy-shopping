@@ -13,6 +13,8 @@ class ProductsController extends Controller
 
     public function smartphones($slug) {
 
+      $recom_top = "You May Also Like";
+
     	$phone = DB::table('smartphones')->select()->where('slug', $slug)->first();
 
     	if($phone == null) {
@@ -110,6 +112,7 @@ class ProductsController extends Controller
         $phone_brand = DB::table('brands')->select('name')->where('id', $phone->brand)->first();
 
     		return view('pages.smartphone', [
+          'recom_top' => $recom_top,
     			'phone' => $phone,
     			'phone_images' => $phone_images,
     			'all_products_id' => $product->id,
@@ -129,6 +132,8 @@ class ProductsController extends Controller
     //laptops
 
     public function laptops($slug) {
+
+      $recom_top = "You May Also Like";
 
     	$laps = DB::table('laptops')->select()->where('slug', $slug)->first();
 
@@ -226,6 +231,7 @@ class ProductsController extends Controller
         $laps_brand = DB::table('brands')->select('name')->where('id', $laps->brand)->first();
 
     		return view('pages.laptop', [
+          'recom_top' => $recom_top,
     			'laps' => $laps,
     			'laps_images' => $laps_images,
     			'all_products_id' => $product->id,
@@ -242,6 +248,8 @@ class ProductsController extends Controller
 //earphones
 
 public function earphones($slug) {
+
+  $recom_top = "You May Also Like";
 
   $ephone = DB::table('earphones')->select()->where('slug', $slug)->first();
 
@@ -342,6 +350,7 @@ public function earphones($slug) {
 
 
     return view('pages.earphone', [
+      'recom_top' => $recom_top,
       'ephone' => $ephone,
       'ephone_images' => $ephone_images,
       'all_products_id' => $product->id,

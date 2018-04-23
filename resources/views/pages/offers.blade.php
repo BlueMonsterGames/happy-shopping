@@ -3,7 +3,7 @@
 	<!-- new -->
 		<div class="newproducts-w3agile">
 			<div class="container">
-				<h3>New offers</h3>
+				<h3>{{ $recom_top }}</h3>
 					<div class="agile_top_brands_grids">
 						<div class="col-md-3 top_brand_left-1">
 							<div class="hover14 column">
