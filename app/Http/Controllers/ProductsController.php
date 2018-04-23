@@ -21,21 +21,16 @@ class ProductsController extends Controller
 
     	else {
 
-        $product = DB::table('all_products')
-                  ->select()
-                  ->where('type', 1)
-                  ->where('type_id', $phone->id)
-                  ->first();
+        $product = DB::table('all_products')->select()->where('type', 1)->where('type_id', $phone->id)->first();
 
     		if (Auth::check()) {
     		    $user = Auth::user();
     		    $id = Auth::id();
 
-    		    $check = DB::table('browsing_hist')
-    		    			->select()
-    		    			->where('user_id', $id)
-    		    			->where('p_id', $product->id)
-    		    			->first();
+
+
+            //logic to check if user has viewed the item or not
+    		    $check = DB::table('browsing_hist')->select()->where('user_id', $id)->where('p_id', $product->id)->first();
 
     		    if($check == null) {
 
@@ -45,9 +40,70 @@ class ProductsController extends Controller
     		        		'p_id' => $product->id
     		        	]
     		    );
+            //logic ends
+
+
+
 
     			}
     		}
+
+
+        //logic of chaos
+
+        $pbyp = DB::table('prod_by_prod')->select()->where('id_main', $product->id)->first();
+
+        $p1ofpbyp = DB::table('all_products')->select()->where('id', $pbyp->id_1)->first();
+        $p2ofpbyp = DB::table('all_products')->select()->where('id', $pbyp->id_2)->first();
+        $p3ofpbyp = DB::table('all_products')->select()->where('id', $pbyp->id_3)->first();
+        $p4ofpbyp = DB::table('all_products')->select()->where('id', $pbyp->id_4)->first();
+
+
+        if($p1ofpbyp->type == 1) {
+            $pro1 = DB::table('smartphones')->select()->where('id', $p1ofpbyp->type_id)->first();
+        }
+        if($p1ofpbyp->type == 2) {
+            $pro1 = DB::table('laptops')->select()->where('id', $p1ofpbyp->type_id)->first();
+        }
+        if($p1ofpbyp->type == 4) {
+            $pro1 = DB::table('earphones')->select()->where('id', $p1ofpbyp->type_id)->first();
+        }
+
+
+        if($p2ofpbyp->type == 1) {
+            $pro2 = DB::table('smartphones')->select()->where('id', $p2ofpbyp->type_id)->first();
+        }
+        if($p2ofpbyp->type == 2) {
+            $pro2 = DB::table('laptops')->select()->where('id', $p2ofpbyp->type_id)->first();
+        }
+        if($p2ofpbyp->type == 4) {
+            $pro2 = DB::table('earphones')->select()->where('id', $p2ofpbyp->type_id)->first();
+        }
+
+
+        if($p3ofpbyp->type == 1) {
+            $pro3 = DB::table('smartphones')->select()->where('id', $p3ofpbyp->type_id)->first();
+        }
+        if($p3ofpbyp->type == 2) {
+            $pro3 = DB::table('laptops')->select()->where('id', $p3ofpbyp->type_id)->first();
+        }
+        if($p3ofpbyp->type == 4) {
+            $pro3 = DB::table('earphones')->select()->where('id', $p3ofpbyp->type_id)->first();
+        }
+
+
+        if($p4ofpbyp->type == 1) {
+            $pro4 = DB::table('smartphones')->select()->where('id', $p4ofpbyp->type_id)->first();
+        }
+        if($p4ofpbyp->type == 2) {
+            $pro4 = DB::table('laptops')->select()->where('id', $p4ofpbyp->type_id)->first();
+        }
+        if($p4ofpbyp->type == 4) {
+            $pro4 = DB::table('earphones')->select()->where('id', $p4ofpbyp->type_id)->first();
+        }
+
+        //logic of chaos ends
+
 
     		$phone_images = DB::table('s_more_images')->select('path')->where('smartphone_id', $phone->id)->get();
 
@@ -57,8 +113,14 @@ class ProductsController extends Controller
     			'phone' => $phone,
     			'phone_images' => $phone_images,
     			'all_products_id' => $product->id,
-          'brand' => $phone_brand
+          'brand' => $phone_brand,
+          'pro1' => $pro1,
+          'pro2' => $pro2,
+          'pro3' => $pro3,
+          'pro4' => $pro4,
     		]);
+
+
 
     	}
     }
@@ -104,6 +166,61 @@ class ProductsController extends Controller
     			}
     		}
 
+        //logic of chaos
+
+        $pbyp = DB::table('prod_by_prod')->select()->where('id_main', $product->id)->first();
+
+        $p1ofpbyp = DB::table('all_products')->select()->where('id', $pbyp->id_1)->first();
+        $p2ofpbyp = DB::table('all_products')->select()->where('id', $pbyp->id_2)->first();
+        $p3ofpbyp = DB::table('all_products')->select()->where('id', $pbyp->id_3)->first();
+        $p4ofpbyp = DB::table('all_products')->select()->where('id', $pbyp->id_4)->first();
+
+
+        if($p1ofpbyp->type == 1) {
+            $pro1 = DB::table('smartphones')->select()->where('id', $p1ofpbyp->type_id)->first();
+        }
+        if($p1ofpbyp->type == 2) {
+            $pro1 = DB::table('laptops')->select()->where('id', $p1ofpbyp->type_id)->first();
+        }
+        if($p1ofpbyp->type == 4) {
+            $pro1 = DB::table('earphones')->select()->where('id', $p1ofpbyp->type_id)->first();
+        }
+
+
+        if($p2ofpbyp->type == 1) {
+            $pro2 = DB::table('smartphones')->select()->where('id', $p2ofpbyp->type_id)->first();
+        }
+        if($p2ofpbyp->type == 2) {
+            $pro2 = DB::table('laptops')->select()->where('id', $p2ofpbyp->type_id)->first();
+        }
+        if($p2ofpbyp->type == 4) {
+            $pro2 = DB::table('earphones')->select()->where('id', $p2ofpbyp->type_id)->first();
+        }
+
+
+        if($p3ofpbyp->type == 1) {
+            $pro3 = DB::table('smartphones')->select()->where('id', $p3ofpbyp->type_id)->first();
+        }
+        if($p3ofpbyp->type == 2) {
+            $pro3 = DB::table('laptops')->select()->where('id', $p3ofpbyp->type_id)->first();
+        }
+        if($p3ofpbyp->type == 4) {
+            $pro3 = DB::table('earphones')->select()->where('id', $p3ofpbyp->type_id)->first();
+        }
+
+
+        if($p4ofpbyp->type == 1) {
+            $pro4 = DB::table('smartphones')->select()->where('id', $p4ofpbyp->type_id)->first();
+        }
+        if($p4ofpbyp->type == 2) {
+            $pro4 = DB::table('laptops')->select()->where('id', $p4ofpbyp->type_id)->first();
+        }
+        if($p4ofpbyp->type == 4) {
+            $pro4 = DB::table('earphones')->select()->where('id', $p4ofpbyp->type_id)->first();
+        }
+
+        //logic of chaos ends
+
     		$laps_images = DB::table('l_more_images')->select('path')->where('laptop_id', $laps->id)->get();
 
         $laps_brand = DB::table('brands')->select('name')->where('id', $laps->brand)->first();
@@ -112,7 +229,11 @@ class ProductsController extends Controller
     			'laps' => $laps,
     			'laps_images' => $laps_images,
     			'all_products_id' => $product->id,
-          'brand' => $laps_brand
+          'brand' => $laps_brand,
+          'pro1' => $pro1,
+          'pro2' => $pro2,
+          'pro3' => $pro3,
+          'pro4' => $pro4,
     		]);
 
     	}
@@ -140,7 +261,7 @@ public function earphones($slug) {
         $user = Auth::user();
         $id = Auth::id();
 
-        
+
         $check = DB::table('browsing_hist')
               ->select()
               ->where('user_id', $id)
@@ -159,6 +280,62 @@ public function earphones($slug) {
       }
     }
 
+
+    //logic of chaos
+
+    $pbyp = DB::table('prod_by_prod')->select()->where('id_main', $product->id)->first();
+
+    $p1ofpbyp = DB::table('all_products')->select()->where('id', $pbyp->id_1)->first();
+    $p2ofpbyp = DB::table('all_products')->select()->where('id', $pbyp->id_2)->first();
+    $p3ofpbyp = DB::table('all_products')->select()->where('id', $pbyp->id_3)->first();
+    $p4ofpbyp = DB::table('all_products')->select()->where('id', $pbyp->id_4)->first();
+
+
+    if($p1ofpbyp->type == 1) {
+        $pro1 = DB::table('smartphones')->select()->where('id', $p1ofpbyp->type_id)->first();
+    }
+    if($p1ofpbyp->type == 2) {
+        $pro1 = DB::table('laptops')->select()->where('id', $p1ofpbyp->type_id)->first();
+    }
+    if($p1ofpbyp->type == 4) {
+        $pro1 = DB::table('earphones')->select()->where('id', $p1ofpbyp->type_id)->first();
+    }
+
+
+    if($p2ofpbyp->type == 1) {
+        $pro2 = DB::table('smartphones')->select()->where('id', $p2ofpbyp->type_id)->first();
+    }
+    if($p2ofpbyp->type == 2) {
+        $pro2 = DB::table('laptops')->select()->where('id', $p2ofpbyp->type_id)->first();
+    }
+    if($p2ofpbyp->type == 4) {
+        $pro2 = DB::table('earphones')->select()->where('id', $p2ofpbyp->type_id)->first();
+    }
+
+
+    if($p3ofpbyp->type == 1) {
+        $pro3 = DB::table('smartphones')->select()->where('id', $p3ofpbyp->type_id)->first();
+    }
+    if($p3ofpbyp->type == 2) {
+        $pro3 = DB::table('laptops')->select()->where('id', $p3ofpbyp->type_id)->first();
+    }
+    if($p3ofpbyp->type == 4) {
+        $pro3 = DB::table('earphones')->select()->where('id', $p3ofpbyp->type_id)->first();
+    }
+
+
+    if($p4ofpbyp->type == 1) {
+        $pro4 = DB::table('smartphones')->select()->where('id', $p4ofpbyp->type_id)->first();
+    }
+    if($p4ofpbyp->type == 2) {
+        $pro4 = DB::table('laptops')->select()->where('id', $p4ofpbyp->type_id)->first();
+    }
+    if($p4ofpbyp->type == 4) {
+        $pro4 = DB::table('earphones')->select()->where('id', $p4ofpbyp->type_id)->first();
+    }
+
+    //logic of chaos ends
+
     $ephone_images = DB::table('e_more_images')->select('path')->where('earphone_id', $ephone->id)->get();
 
     $ephone_brand = DB::table('brands')->select('name')->where('id', $ephone->brand)->first();
@@ -168,7 +345,11 @@ public function earphones($slug) {
       'ephone' => $ephone,
       'ephone_images' => $ephone_images,
       'all_products_id' => $product->id,
-      'brand' => $ephone_brand
+      'brand' => $ephone_brand,
+      'pro1' => $pro1,
+      'pro2' => $pro2,
+      'pro3' => $pro3,
+      'pro4' => $pro4,
     ]);
 
   }

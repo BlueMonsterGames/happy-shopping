@@ -122,7 +122,7 @@
 
 @yield('cart')
 
-@include('layouts.offers')
+@include('pages.offers')
 
 <!-- //footer -->
 
